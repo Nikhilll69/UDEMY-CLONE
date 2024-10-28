@@ -1,4 +1,8 @@
+import CommanForm from "@/components/ui/common-form"
+import FormControls from "@/components/ui/common-form/form-control"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { signUpFormControls } from "@/config"
+import { signInFormControls } from "@/config"
 
 import { GraduationCap } from 'lucide-react'
 import React, { useState } from 'react'
@@ -27,8 +31,13 @@ function AuthPage() {
             <TabsTrigger value='signin'>Sign In</TabsTrigger>
             <TabsTrigger value='signup'>Sign Up</TabsTrigger>
           </TabsList>
-          <TabsContent value='signin'>sign In</TabsContent>
-          <TabsContent value='signup'>sign up</TabsContent>
+          <TabsContent value='signin'>
+            <CommanForm formControls={signInFormControls} />
+          </TabsContent>
+          <TabsContent value='signup'>
+            <CommanForm  formControls={signUpFormControls}/>
+           
+          </TabsContent>
 
         </Tabs>
       </div>
